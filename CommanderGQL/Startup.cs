@@ -30,7 +30,7 @@ namespace CommanderGQL
         {
             services.AddPooledDbContextFactory<AppDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("CommandConStr")));
 
-            services.AddGraphQLServer().AddQueryType<Query>();
+            services.AddGraphQLServer().AddQueryType<Query>().AddProjections();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
